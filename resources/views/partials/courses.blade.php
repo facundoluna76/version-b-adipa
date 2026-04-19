@@ -120,7 +120,7 @@
 
                 {{-- Load more --}}
                 <div class="courses__load-more">
-                    <button class="courses__load-more-btn">📚 Ver todos los cursos</button>
+                    <button class="courses__load-more-btn">Ver todos los cursos</button>
                 </div>
 
             </div>

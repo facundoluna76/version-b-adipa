@@ -133,6 +133,15 @@
     background transparent
     color $gray-500
     font-size 1.125rem
+    line-height 1
+    align-items center
+    justify-content center
+    cursor pointer
+
+    svg
+      display block
+      flex-shrink 0
+    border none
 
     .dark &
       color $white
@@ -174,6 +183,9 @@
     padding .5rem 1rem
     color $gray-700
     background transparent
+    border none
+    border-radius $radius-full
+    cursor pointer
 
     .dark &
       color $white
@@ -186,6 +198,9 @@
     padding .5rem 1rem
     background $purple
     color $white
+    border none
+    border-radius $radius-full
+    cursor pointer
 
     &:hover
       background $purple-600
@@ -197,6 +212,7 @@
     background transparent
     color $gray-500
     border-radius $radius-full
+    cursor pointer
 
     .dark &
       color $white
@@ -381,6 +397,8 @@
     padding .625rem 1rem
     border 1px solid $purple
     color $purple
+    border-radius $radius-full
+    cursor pointer
     margin-bottom .5rem
 
     &:hover
@@ -393,6 +411,8 @@
     padding .625rem 1rem
     background $purple
     color $white
+    border-radius $radius-full
+    cursor pointer
 
     &:hover
       background $purple-600

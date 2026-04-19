@@ -13,3 +13,38 @@ container()
   @media (min-width: $bp-lg)
     padding-left 2rem
     padding-right 2rem
+
+flex-center()
+  display flex
+  align-items center
+  justify-content center
+
+flex-between()
+  display flex
+  align-items center
+  justify-content space-between
+
+btn-base()
+  display inline-flex
+  align-items center
+  justify-content center
+  font-weight 600
+  font-family $font-sans
+  text-decoration none
+  transition $transition
+  cursor pointer
+  border none
+  border-radius $radius-full
+
+card-hover()
+  transition $transition
+
+  &:hover
+    transform translateY(-4px)
+    box-shadow $shadow-lg
+
+gradient-text()
+  background linear-gradient(135deg, $purple 0%, $cyan 100%)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
