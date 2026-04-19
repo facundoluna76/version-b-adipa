@@ -24,7 +24,8 @@
       grid-template-columns 2fr 1fr 1fr 1fr
 
   &__brand-logo
-    margin-bottom .75rem
+    display block
+    margin-bottom 1rem
 
     img
       height 2rem
@@ -36,6 +37,9 @@
     line-height 1.6
     max-width 20rem
     margin-bottom 1.25rem
+
+    .dark &
+      color $white
 
   &__contact-list
     display flex
@@ -49,6 +53,9 @@
     gap .5rem
     font-size .875rem
     color $gray-500
+
+    .dark &
+      color $white
 
     a
       transition color .2s ease
@@ -107,6 +114,9 @@
     color $gray-500
     transition color .2s ease
 
+    .dark &
+      color $white
+
     &:hover
       color $purple
 
@@ -133,6 +143,9 @@
     font-size .75rem
     color $gray-500
 
+    .dark &
+      color $white
+
   &__legal
     display flex
     gap 1.25rem
@@ -141,6 +154,9 @@
     font-size .75rem
     color $gray-500
     transition color .2s ease
+
+    .dark &
+      color $white
 
     &:hover
       color $purple
@@ -159,6 +175,33 @@
   &__header
     text-align center
     margin-bottom 3rem
+
+  &__label
+    font-size .875rem
+    font-weight 700
+    text-transform uppercase
+    letter-spacing .08em
+    color $purple
+    margin-bottom .5rem
+
+  &__heading
+    font-size 1.75rem
+    font-weight 900
+    color $dark
+    margin-bottom .75rem
+
+    .dark &
+      color $white
+
+  &__desc
+    font-size .9375rem
+    color $gray-500
+    line-height 1.6
+    max-width 36rem
+    margin 0 auto
+
+    .dark &
+      color $white
 
   &__grid
     display grid
@@ -228,6 +271,14 @@
   &__header
     text-align center
     margin-bottom 3rem
+
+  &__heading
+    font-size 1.75rem
+    font-weight 900
+    color $dark
+
+    .dark &
+      color $white
 
   &__grid
     display grid

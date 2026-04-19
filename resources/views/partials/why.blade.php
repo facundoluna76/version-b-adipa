@@ -2,13 +2,11 @@
     <div class="why__inner">
 
         <div class="why__header">
-            <p style="font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6C5CE7;margin-bottom:.5rem;">
-                ¿Por qué elegirnos?
-            </p>
-            <h2 id="why-heading" style="font-size:1.75rem;font-weight:900;color:#0F0F1A;margin-bottom:1rem;">
+            <p class="why__label">¿Por qué elegirnos?</p>
+            <h2 id="why-heading" class="why__heading">
                 La plataforma que eligen los <span class="gradient-text">profesionales</span>
             </h2>
-            <p>
+            <p class="why__desc">
                 Más de 15.000 psicólogos y profesionales de la salud mental ya eligieron ADIPA para potenciar su carrera.
             </p>
         </div>

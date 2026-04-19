@@ -13,6 +13,31 @@
     text-align center
     margin-bottom 2.5rem
 
+  &__label
+    font-size .875rem
+    font-weight 700
+    text-transform uppercase
+    letter-spacing .08em
+    color $purple
+    margin-bottom .5rem
+
+  &__heading
+    font-size 1.75rem
+    font-weight 900
+    color $dark
+    margin-bottom .75rem
+
+    .dark &
+      color $white
+
+  &__subheading
+    color $gray-500
+    max-width 36rem
+    margin 0 auto
+
+    .dark &
+      color $white
+
   // ─── Filter sidebar layout ─────────────────────────────────────────
   &__layout
     display flex
@@ -554,6 +579,9 @@
     color $gray-500
     margin-bottom .75rem
 
+    .dark &
+      color $white
+
     span
       font-size .75rem
       font-weight 400
@@ -568,6 +596,9 @@
     -webkit-box-orient vertical
     overflow hidden
 
+    .dark &
+      color $white
+
   &__meta
     display flex
     flex-wrap wrap
@@ -575,6 +606,9 @@
     font-size .75rem
     color $gray-500
     margin-bottom 1rem
+
+    .dark &
+      color $white
 
   &__meta-item
     display flex
@@ -610,6 +644,9 @@
     font-size .75rem
     color $gray-500
 
+    .dark &
+      color $white
+
   &__spacer
     flex 1
 
@@ -627,6 +664,9 @@
     font-size .75rem
     color $gray-400
     text-decoration line-through
+
+    .dark &
+      color $white
 
   &__price-row
     display flex

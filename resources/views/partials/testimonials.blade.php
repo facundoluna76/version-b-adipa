@@ -2,7 +2,7 @@
     <div class="testimonials__inner">
 
         <div class="testimonials__header">
-            <h2 id="testimonials-heading" style="font-size:1.75rem;font-weight:900;color:#0F0F1A;">
+            <h2 id="testimonials-heading" class="testimonials__heading">
                 Lo que dicen nuestros estudiantes
             </h2>
         </div>

@@ -3,13 +3,11 @@
 
         {{-- Header --}}
         <div class="courses__header">
-            <p style="font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6C5CE7;margin-bottom:.5rem;">
-                Catálogo 2026
-            </p>
-            <h2 id="courses-heading" style="font-size:1.75rem;font-weight:900;color:#0F0F1A;margin-bottom:.75rem;">
+            <p class="courses__label">Catálogo 2026</p>
+            <h2 id="courses-heading" class="courses__heading">
                 Cursos que te permitirán <span class="gradient-text">potenciar tu carrera</span>
             </h2>
-            <p style="color:#6B7280;max-width:36rem;margin:0 auto;">
+            <p class="courses__subheading">
                 Formación de alto impacto impartida por los mejores especialistas de Latinoamérica.
             </p>
         </div>
