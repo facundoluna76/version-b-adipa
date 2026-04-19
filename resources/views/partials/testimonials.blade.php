@@ -1,7 +1,7 @@
 <section class="testimonials" aria-labelledby="testimonials-heading">
     <div class="testimonials__inner">
 
-        <div class="testimonials__header">
+        <div class="testimonials__header fade-in">
             <h2 id="testimonials-heading" class="testimonials__heading">
                 Lo que dicen nuestros estudiantes
             </h2>
@@ -31,7 +31,7 @@
                     'stars'  => 5,
                 ],
             ] as $t)
-                <blockquote class="testimonials__card">
+                <blockquote class="testimonials__card fade-in fade-in--delay-{{ $loop->index + 1 }}">
                     <div class="testimonials__stars" aria-label="{{ $t['stars'] }} estrellas de 5">
                         @for($i = 0; $i < $t['stars']; $i++)
                             <span aria-hidden="true">★</span>

@@ -1,7 +1,7 @@
 <section class="why" aria-labelledby="why-heading">
     <div class="why__inner">
 
-        <div class="why__header">
+        <div class="why__header fade-in">
             <p class="why__label">¿Por qué elegirnos?</p>
             <h2 id="why-heading" class="why__heading">
                 La plataforma que eligen los <span class="gradient-text">profesionales</span>
@@ -18,7 +18,7 @@
                 ['icon' => '🌎', 'title' => 'Acceso desde cualquier lugar','desc' => 'Cursos online, en vivo y presenciales. Accede desde Chile, México, Colombia y más.'],
                 ['icon' => '⏰', 'title' => 'Flexibilidad horaria',        'desc' => 'Clases en vivo grabadas disponibles 24/7. Aprende a tu ritmo sin perder contenido.'],
             ] as $card)
-                <div class="why__card">
+                <div class="why__card fade-in fade-in--delay-{{ $loop->index + 1 }}">
                     <div class="why__icon" aria-hidden="true">{{ $card['icon'] }}</div>
                     <h3 class="why__card-title">{{ $card['title'] }}</h3>
                     <p class="why__card-desc">{{ $card['desc'] }}</p>

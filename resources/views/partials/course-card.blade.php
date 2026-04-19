@@ -1,7 +1,7 @@
 @php use App\Data\CoursesData; @endphp
 
 <article
-    class="course-card"
+    class="course-card fade-in"
     data-category="{{ $course['category'] }}"
     data-modality="{{ $course['modality'] }}"
     data-price="{{ $course['discount_price'] }}"

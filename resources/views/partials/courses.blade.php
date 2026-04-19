@@ -2,7 +2,7 @@
     <div class="courses__inner">
 
         {{-- Header --}}
-        <div class="courses__header">
+        <div class="courses__header fade-in">
             <p class="courses__label">Catálogo 2026</p>
             <h2 id="courses-heading" class="courses__heading">
                 Cursos que te permitirán <span class="gradient-text">potenciar tu carrera</span>

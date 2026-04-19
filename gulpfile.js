@@ -18,6 +18,7 @@ const paths = {
       'resources/js/header.js',
       'resources/js/filters.js',
       'resources/js/contact.js',
+      'resources/js/animations.js',
       'resources/js/main.js',
     ],
     dest: 'public/js',

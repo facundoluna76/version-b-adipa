@@ -3,7 +3,7 @@
         <div class="contact__grid">
 
             {{-- Info --}}
-            <div>
+            <div class="fade-in">
                 <p class="contact__info-label">Contacto</p>
                 <h2 id="contact-heading" class="contact__info-title">
                     ¿Tienes dudas? <span class="gradient-text">Estamos para ayudarte</span>
@@ -45,7 +45,7 @@
             </div>
 
             {{-- Form --}}
-            <div class="contact__form-wrap">
+            <div class="contact__form-wrap fade-in fade-in--delay-2">
                 <h3 class="contact__form-title">Envíanos un mensaje</h3>
 
                 <div id="contact-success" class="contact__success">
