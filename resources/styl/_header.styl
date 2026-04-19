@@ -1,0 +1,398 @@
+// ─── Promo banner ─────────────────────────────────────────────────────
+.promo-banner
+  position relative
+  display flex
+  align-items center
+  justify-content center
+  background $red
+  padding .625rem 1rem
+  color $white
+  font-size .875rem
+  font-weight 500
+  text-align center
+
+  &__close
+    position absolute
+    right 1rem
+    top 50%
+    transform translateY(-50%)
+    background transparent
+    border none
+    color rgba($white, .8)
+    cursor pointer
+    padding .25rem
+    line-height 1
+    font-size 1rem
+
+    &:hover
+      color $white
+
+// ─── Header ───────────────────────────────────────────────────────────
+.header
+  position fixed
+  top 0
+  left 0
+  right 0
+  z-index 50
+  transition box-shadow .3s ease
+
+  &.is-scrolled
+    box-shadow $shadow-md
+
+  &__bar
+    background $white
+    border-bottom 1px solid $gray-200
+    transition background-color .3s ease, border-color .3s ease
+
+    .dark &
+      background $gray-900
+      border-bottom-color rgba($gray-700, .5)
+
+  &__inner
+    container()
+    display flex
+    align-items center
+    justify-content space-between
+    padding-top .75rem
+    padding-bottom .75rem
+
+  &__logo
+    flex-shrink 0
+
+    img
+      height 1.75rem
+      width auto
+
+  &__search
+    flex 1
+    max-width 28rem
+    margin 0 1.5rem
+    display none
+
+    @media (min-width: $bp-lg)
+      display block
+
+  &__search-wrap
+    position relative
+    width 100%
+
+  &__search-input
+    width 100%
+    border-radius $radius-full
+    border 1px solid $gray-200
+    background $gray-50
+    padding .5rem 3rem .5rem 1rem
+    font-size .875rem
+    color $gray-700
+    font-family $font-sans
+    transition border-color .2s ease
+
+    .dark &
+      border-color $gray-700
+      background rgba($gray-900, .8)
+      color $white
+
+      &::placeholder
+        color $white
+
+    &::placeholder
+      color $gray-500
+
+    &:focus
+      outline none
+      border-color $purple
+      box-shadow 0 0 0 3px rgba($purple, .2)
+
+  &__search-btn
+    position absolute
+    right 0
+    top 0
+    height 100%
+    padding 0 1rem
+    background $cyan
+    border none
+    border-radius 0 $radius-full $radius-full 0
+    color $white
+    cursor pointer
+    transition background-color .2s ease
+    display flex
+    align-items center
+
+    &:hover
+      background $cyan-600
+
+  &__actions
+    display flex
+    align-items center
+    gap .5rem
+
+  &__icon-btn
+    btn-base()
+    border-radius $radius-full
+    padding .5rem
+    background transparent
+    color $gray-500
+    font-size 1.125rem
+
+    .dark &
+      color $white
+
+    &:hover
+      background $purple-50
+      color $purple
+
+      .dark &
+        background $gray-700
+
+  &__cart
+    position relative
+
+  &__cart-badge
+    position absolute
+    top -.125rem
+    right -.125rem
+    width 1rem
+    height 1rem
+    border-radius $radius-full
+    background $red
+    color $white
+    font-size .625rem
+    font-weight 700
+    flex-center()
+    display flex
+
+  &__auth
+    display none
+    align-items center
+    gap .5rem
+
+    @media (min-width: $bp-sm)
+      display flex
+
+  &__btn-login
+    btn-base()
+    padding .5rem 1rem
+    color $gray-700
+    background transparent
+
+    .dark &
+      color $white
+
+    &:hover
+      color $purple
+
+  &__btn-register
+    btn-base()
+    padding .5rem 1rem
+    background $purple
+    color $white
+
+    &:hover
+      background $purple-600
+      box-shadow $shadow-purple
+
+  &__mobile-toggle
+    btn-base()
+    padding .5rem
+    background transparent
+    color $gray-500
+    border-radius $radius-full
+
+    .dark &
+      color $white
+
+    @media (min-width: $bp-lg)
+      display none
+
+// ─── Nav bar ──────────────────────────────────────────────────────────
+.nav
+  display none
+  background $white
+  border-bottom 1px solid $gray-200
+
+  .dark &
+    background $gray-900
+    border-bottom-color rgba($gray-700, .5)
+
+  @media (min-width: $bp-lg)
+    display block
+
+  &__inner
+    container()
+    display flex
+    align-items center
+    gap .25rem
+    padding-top .5rem
+    padding-bottom .5rem
+
+  &__discover
+    display flex
+    align-items center
+    gap .375rem
+    font-size .875rem
+    color $gray-500
+    margin-right 1rem
+
+    .dark &
+      color $white
+
+    &:hover
+      color $purple
+
+  &__divider
+    width 1px
+    height 1rem
+    background $gray-200
+
+    .dark &
+      background $gray-700
+
+  &__link
+    display flex
+    align-items center
+    gap .375rem
+    border-radius $radius-full
+    padding .375rem .75rem
+    font-size .875rem
+    font-weight 500
+    color $gray-700
+    transition $transition-colors
+
+    .dark &
+      color $white
+
+    &:hover
+      color $purple
+
+    &.is-active
+      font-weight 700
+      color $purple
+
+  &__badge
+    border-radius 4px
+    padding .125rem .375rem
+    font-size .625rem
+    font-weight 700
+    color $white
+    background $red
+
+    &--green
+      background #22C55E
+
+// ─── Mobile menu ──────────────────────────────────────────────────────
+.mobile-menu
+  display none
+  position fixed
+  inset 0
+  z-index 40
+
+  &.is-open
+    display block
+
+  &__backdrop
+    position absolute
+    inset 0
+    background rgba(0,0,0,.4)
+    backdrop-filter blur(4px)
+
+  &__panel
+    position absolute
+    top 0
+    right 0
+    height 100%
+    width 20rem
+    overflow-y auto
+    background $white
+    box-shadow -4px 0 24px rgba(0,0,0,.1)
+
+    .dark &
+      background $gray-900
+
+  &__head
+    display flex
+    align-items center
+    justify-content space-between
+    padding 1rem
+    border-bottom 1px solid $gray-200
+
+    .dark &
+      border-bottom-color rgba($gray-700, .5)
+
+  &__search
+    padding 1rem
+
+  &__search-input
+    width 100%
+    border-radius $radius-full
+    border 1px solid $gray-200
+    background $gray-50
+    padding .625rem 1rem
+    font-size .875rem
+    font-family $font-sans
+
+    .dark &
+      border-color $gray-700
+      background $gray-800
+      color $white
+
+    &:focus
+      outline none
+      border-color $purple
+
+  &__nav
+    padding .5rem
+
+  &__link
+    display flex
+    align-items center
+    gap .5rem
+    border-radius $radius-xl
+    padding .75rem 1rem
+    font-size .875rem
+    font-weight 500
+    color $gray-700
+    transition $transition-colors
+
+    .dark &
+      color $white
+
+    &:hover
+      background $gray-50
+
+      .dark &
+        background rgba($gray-700, .3)
+
+    &.is-active
+      background $purple-50
+      color $purple
+      font-weight 700
+
+  &__footer
+    padding 1rem
+    border-top 1px solid $gray-200
+
+    .dark &
+      border-top-color rgba($gray-700, .5)
+
+  &__btn-login
+    btn-base()
+    display block
+    width 100%
+    padding .625rem 1rem
+    border 1px solid $purple
+    color $purple
+    margin-bottom .5rem
+
+    &:hover
+      background $purple-50
+
+  &__btn-register
+    btn-base()
+    display block
+    width 100%
+    padding .625rem 1rem
+    background $purple
+    color $white
+
+    &:hover
+      background $purple-600
