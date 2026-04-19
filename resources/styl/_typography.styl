@@ -1,0 +1,56 @@
+// ─── Google Fonts import ──────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap')
+
+// ─── Headings ─────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6
+  font-family $font-sans
+  font-weight 700
+  line-height 1.2
+  color $dark
+
+  .dark &
+    color $white
+
+h1
+  font-size 2.5rem
+
+  @media (min-width: $bp-md)
+    font-size 3rem
+
+  @media (min-width: $bp-lg)
+    font-size 3.5rem
+
+h2
+  font-size 1.75rem
+
+  @media (min-width: $bp-md)
+    font-size 2rem
+
+h3
+  font-size 1.25rem
+
+// ─── Paragraph ────────────────────────────────────────────────────────
+p
+  line-height 1.6
+
+// ─── Utilities ────────────────────────────────────────────────────────
+.gradient-text
+  gradient-text()
+
+.text-purple
+  color $purple
+
+.text-cyan
+  color $cyan
+
+.text-orange
+  color $orange
+
+.font-black
+  font-weight 900
+
+.uppercase
+  text-transform uppercase
+
+.tracking-wide
+  letter-spacing .08em
