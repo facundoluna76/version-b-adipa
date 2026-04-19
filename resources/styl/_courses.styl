@@ -1,0 +1,680 @@
+// ─── Course section wrapper ───────────────────────────────────────────
+.courses
+  background $gray-50
+  padding 4rem 0
+
+  .dark &
+    background $dark
+
+  &__inner
+    container()
+
+  &__header
+    text-align center
+    margin-bottom 2.5rem
+
+  // ─── Filter sidebar layout ─────────────────────────────────────────
+  &__layout
+    display flex
+    gap 2rem
+    align-items flex-start
+
+  // ─── Top bar (sort + results + mobile toggle) ──────────────────────
+  &__topbar
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-between
+    gap .75rem
+    margin-bottom 1.5rem
+
+  &__topbar-left
+    display flex
+    align-items center
+    gap .75rem
+
+  &__result-count
+    font-size .875rem
+    color $gray-500
+
+    .dark &
+      color $gray-400
+
+    strong
+      color $dark
+      font-weight 700
+
+      .dark &
+        color $white
+
+  &__sort-wrap
+    display flex
+    align-items center
+    gap .5rem
+
+  &__sort
+    border-radius $radius-full
+    border 1px solid $gray-200
+    background $white
+    padding .375rem 2.25rem .375rem .75rem
+    font-size .875rem
+    color $gray-700
+    cursor pointer
+    appearance none
+    font-family $font-sans
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")
+    background-repeat no-repeat
+    background-position right .75rem center
+
+    .dark &
+      border-color $gray-700
+      background-color $gray-900
+      color $gray-300
+
+    &:focus
+      outline none
+      border-color $purple
+      box-shadow 0 0 0 3px rgba($purple, .15)
+
+  // ─── Filter toggle button (mobile) ────────────────────────────────
+  &__filter-toggle
+    btn-base()
+    padding .5rem 1rem
+    border 1px solid $gray-200
+    background $white
+    color $gray-700
+    border-radius $radius-full
+    display flex
+
+    @media (min-width: $bp-lg)
+      display none
+
+    .dark &
+      border-color $gray-700
+      background $gray-900
+      color $gray-300
+
+    &.has-active
+      border-color $purple
+      background $purple-50
+      color $purple
+
+  &__filter-badge
+    display inline-flex
+    align-items center
+    justify-content center
+    width 1.25rem
+    height 1.25rem
+    border-radius $radius-full
+    background $purple
+    color $white
+    font-size .6875rem
+    font-weight 700
+    margin-left .25rem
+
+  // ─── Grid ─────────────────────────────────────────────────────────
+  &__main
+    flex 1
+    min-width 0
+
+  &__grid
+    display grid
+    grid-template-columns 1fr
+    gap 1.5rem
+
+    @media (min-width: $bp-sm)
+      grid-template-columns repeat(2, 1fr)
+
+    @media (min-width: $bp-xl)
+      grid-template-columns repeat(3, 1fr)
+
+  // ─── Empty state ───────────────────────────────────────────────────
+  &__empty
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    text-align center
+    padding 6rem 1rem
+    border 2px dashed $gray-200
+    border-radius $radius-xl
+
+    .dark &
+      border-color rgba($gray-700, .5)
+
+  &__empty-icon
+    font-size 3rem
+    margin-bottom 1rem
+    opacity .4
+
+  &__empty-title
+    font-size 1.125rem
+    font-weight 700
+    color $dark
+    margin-bottom .5rem
+
+    .dark &
+      color $white
+
+  &__empty-text
+    font-size .875rem
+    color $gray-500
+    margin-bottom 1.25rem
+
+  &__empty-btn
+    btn-base()
+    padding .625rem 1.25rem
+    background $purple
+    color $white
+
+    &:hover
+      background $purple-600
+
+  // ─── Load more ────────────────────────────────────────────────────
+  &__load-more
+    text-align center
+    margin-top 3rem
+
+  &__load-more-btn
+    btn-base()
+    padding .75rem 2rem
+    border 2px solid $purple
+    color $purple
+    background transparent
+    border-radius $radius-full
+
+    &:hover
+      background $purple
+      color $white
+      box-shadow $shadow-purple
+
+// ─── Filter Sidebar ───────────────────────────────────────────────────
+.filter-sidebar
+  display none
+  width 16rem
+  flex-shrink 0
+
+  @media (min-width: $bp-lg)
+    display block
+
+  &__panel
+    position sticky
+    top 9rem
+    border-radius $radius-xl
+    border 1px solid $gray-200
+    background $white
+    padding 1.25rem
+
+    .dark &
+      border-color rgba($gray-700, .5)
+      background $gray-900
+
+  &__header
+    flex-between()
+    margin-bottom 1.25rem
+
+  &__title
+    display flex
+    align-items center
+    gap .5rem
+    font-weight 700
+    color $dark
+    font-size .9375rem
+
+    .dark &
+      color $white
+
+  &__active-badge
+    border-radius $radius-full
+    background $purple
+    color $white
+    font-size .6875rem
+    font-weight 700
+    padding .125rem .5rem
+
+  &__section
+    border-bottom 1px solid $gray-200
+    padding-bottom 1.25rem
+    margin-bottom 1.25rem
+
+    .dark &
+      border-bottom-color rgba($gray-700, .5)
+
+    &:last-of-type
+      border-bottom none
+      margin-bottom 0
+      padding-bottom 0
+
+  &__section-title
+    font-size .6875rem
+    font-weight 700
+    text-transform uppercase
+    letter-spacing .08em
+    color $gray-500
+    margin-bottom .75rem
+
+  &__search
+    position relative
+
+    input
+      width 100%
+      border-radius $radius-md
+      border 1px solid $gray-200
+      background $gray-50
+      padding .5rem .75rem .5rem 2rem
+      font-size .875rem
+      color $dark
+      font-family $font-sans
+
+      .dark &
+        border-color $gray-700
+        background $gray-900
+        color $white
+
+      &::placeholder
+        color $gray-400
+
+      &:focus
+        outline none
+        border-color $purple
+        box-shadow 0 0 0 3px rgba($purple, .15)
+
+    &-icon
+      position absolute
+      left .625rem
+      top 50%
+      transform translateY(-50%)
+      color $gray-400
+      pointer-events none
+      font-size .875rem
+
+  &__radio-item
+    display flex
+    width 100%
+    align-items center
+    justify-content space-between
+    border-radius $radius-md
+    padding .5rem .75rem
+    font-size .875rem
+    color $gray-700
+    background transparent
+    border none
+    cursor pointer
+    transition $transition-colors
+    text-align left
+
+    .dark &
+      color $gray-300
+
+    &:hover
+      background $gray-100
+
+      .dark &
+        background rgba($gray-700, .5)
+
+    &.is-active
+      background rgba($purple, .1)
+      color $purple
+      font-weight 600
+
+  &__radio-count
+    border-radius $radius-full
+    padding .125rem .375rem
+    font-size .625rem
+    font-weight 700
+    background $gray-200
+    color $gray-500
+    flex-shrink 0
+    margin-left .5rem
+
+    .dark &
+      background $gray-700
+      color $gray-400
+
+    .is-active &
+      background $purple
+      color $white
+
+  &__check-item
+    display flex
+    align-items center
+    gap .75rem
+    cursor pointer
+    font-size .875rem
+    color $gray-700
+
+    .dark &
+      color $gray-300
+
+    input[type="checkbox"]
+      width 1rem
+      height 1rem
+      flex-shrink 0
+      border-radius 4px
+      border 1px solid $gray-300
+      accent-color $purple
+      cursor pointer
+
+  &__check-label
+    display flex
+    flex 1
+    align-items center
+    gap .5rem
+
+  &__check-count
+    border-radius $radius-full
+    padding .125rem .375rem
+    font-size .625rem
+    font-weight 700
+    background $gray-200
+    color $gray-500
+    margin-left auto
+    flex-shrink 0
+
+    .dark &
+      background $gray-700
+      color $gray-400
+
+  &__clear
+    display flex
+    width 100%
+    align-items center
+    justify-content center
+    gap .5rem
+    border-radius $radius-md
+    border 1px solid rgba($red, .4)
+    padding .5rem
+    font-size .875rem
+    font-weight 600
+    color $red
+    background transparent
+    cursor pointer
+    transition background-color .2s ease
+    margin-top .75rem
+
+    &:hover
+      background rgba($red, .05)
+
+// ─── Filter drawer (mobile) ────────────────────────────────────────────
+.filter-drawer
+  display none
+  position fixed
+  inset 0
+  z-index 50
+
+  &.is-open
+    display block
+
+  &__backdrop
+    position absolute
+    inset 0
+    background rgba(0,0,0,.4)
+    backdrop-filter blur(4px)
+
+  &__panel
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    max-height 88vh
+    overflow-y auto
+    border-radius $radius-xl $radius-xl 0 0
+    background $white
+    padding 1.5rem
+
+    .dark &
+      background $gray-900
+
+  &__handle
+    width 2.5rem
+    height .25rem
+    border-radius $radius-full
+    background $gray-200
+    margin 0 auto 1rem
+
+    .dark &
+      background $gray-700
+
+  &__header
+    flex-between()
+    margin-bottom 1.25rem
+
+  &__title
+    display flex
+    align-items center
+    gap .5rem
+    font-weight 700
+    color $dark
+
+    .dark &
+      color $white
+
+  &__close
+    btn-base()
+    padding .5rem
+    border-radius $radius-full
+    background transparent
+    color $gray-500
+
+    &:hover
+      background $gray-100
+
+  &__apply
+    display block
+    width 100%
+    btn-base()
+    padding .75rem 1rem
+    background $purple
+    color $white
+    border-radius $radius-full
+    margin-top 1.5rem
+    font-size .9375rem
+
+    &:hover
+      background $purple-600
+
+// ─── Course Card ──────────────────────────────────────────────────────
+.course-card
+  display flex
+  flex-direction column
+  border-radius $radius-xl
+  background $white
+  border 1px solid $gray-200
+  overflow hidden
+  box-shadow $shadow-sm
+  card-hover()
+
+  .dark &
+    background $gray-900
+    border-color rgba($gray-700, .6)
+
+  &:focus-within
+    box-shadow 0 0 0 3px rgba($purple, .4)
+
+  &__image
+    position relative
+    height 12rem
+    overflow hidden
+    background $gray-100
+
+    img
+      width 100%
+      height 100%
+      object-fit cover
+      transition transform .5s ease
+
+  &:hover &__image img
+    transform scale(1.05)
+
+  &__overlay
+    position absolute
+    inset 0
+    background linear-gradient(to top, rgba(0,0,0,.3), transparent)
+
+  &__badges-top
+    position absolute
+    top .75rem
+    left .75rem
+    display flex
+    gap .5rem
+
+  &__badge-top-right
+    position absolute
+    top .75rem
+    right .75rem
+
+  &__body
+    display flex
+    flex-direction column
+    flex 1
+    padding 1rem
+
+  &__title
+    font-size .9375rem
+    font-weight 700
+    color $dark
+    line-height 1.3
+    margin-bottom .375rem
+    display -webkit-box
+    -webkit-line-clamp 2
+    -webkit-box-orient vertical
+    overflow hidden
+
+    .dark &
+      color $white
+
+  &__instructor
+    font-size .8125rem
+    color $gray-500
+    margin-bottom .75rem
+
+    span
+      font-size .75rem
+      font-weight 400
+
+  &__desc
+    font-size .8125rem
+    color $gray-500
+    line-height 1.5
+    margin-bottom 1rem
+    display -webkit-box
+    -webkit-line-clamp 2
+    -webkit-box-orient vertical
+    overflow hidden
+
+  &__meta
+    display flex
+    flex-wrap wrap
+    gap .75rem
+    font-size .75rem
+    color $gray-500
+    margin-bottom 1rem
+
+  &__meta-item
+    display flex
+    align-items center
+    gap .25rem
+
+  &__meta-icon
+    color $purple
+
+  &__rating
+    display flex
+    align-items center
+    gap .5rem
+    margin-bottom 1rem
+
+  &__stars
+    display flex
+    gap .125rem
+
+  &__star
+    font-size .8125rem
+    color $gray-200
+
+    &.filled
+      color $orange
+
+  &__rating-score
+    font-size .75rem
+    font-weight 700
+    color $orange
+
+  &__reviews
+    font-size .75rem
+    color $gray-500
+
+  &__spacer
+    flex 1
+
+  &__footer
+    display flex
+    align-items center
+    justify-content space-between
+    border-top 1px solid $gray-200
+    padding-top 1rem
+
+    .dark &
+      border-top-color rgba($gray-700, .6)
+
+  &__price-original
+    font-size .75rem
+    color $gray-400
+    text-decoration line-through
+
+  &__price-row
+    display flex
+    align-items center
+    gap .5rem
+
+  &__price-discount
+    font-size 1.125rem
+    font-weight 900
+    color $purple
+
+  &__cta
+    btn-base()
+    padding .5rem 1rem
+    background $purple
+    color $white
+    font-size .8125rem
+
+    &:hover
+      background $purple-600
+      box-shadow $shadow-purple
+
+// ─── Badge component ──────────────────────────────────────────────────
+.badge
+  display inline-flex
+  align-items center
+  border-radius $radius-full
+  padding .25rem .625rem
+  font-size .625rem
+  font-weight 700
+  text-transform uppercase
+  letter-spacing .04em
+
+  &--modality-live
+    background $red
+    color $white
+    box-shadow 0 0 0 1.5px rgba(255,255,255,.5), 0 2px 6px rgba(0,0,0,.3)
+
+  &--modality-online
+    background $cyan-600
+    color $white
+
+  &--modality-presencial
+    background #16A34A
+    color $white
+
+  &--new
+    background $purple
+    color $white
+
+  &--featured
+    background $orange
+    color $white
+
+  &--discount
+    background $orange
+    color $white
