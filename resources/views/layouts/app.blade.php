@@ -13,6 +13,15 @@
 
     {{-- CSS compilado por Gulp --}}
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+        {{-- Prevent dark mode flash --}}
+    <script>
+        (function() {
+            if (localStorage.getItem('adipa-theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        })();
+    </script>
 </head>
 <body>
 

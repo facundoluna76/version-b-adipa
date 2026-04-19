@@ -126,6 +126,63 @@
             </div>
         </div>
     </div>
+
+
+            {{-- Filter drawer (mobile) --}}
+        <div class="filter-drawer" id="filter-drawer">
+            <div class="filter-drawer__backdrop" id="filter-drawer-backdrop"></div>
+            <div class="filter-drawer__panel">
+                <div class="filter-drawer__handle" aria-hidden="true"></div>
+
+                <div class="filter-drawer__header">
+                    <p class="filter-drawer__title">
+                        ☰ Filtros
+                        <span class="filter-sidebar__active-badge" id="drawer-active-badge" style="display:none"></span>
+                    </p>
+                    <button class="filter-drawer__close" id="filter-drawer-close" aria-label="Cerrar filtros">✕</button>
+                </div>
+
+                {{-- Search --}}
+                <div class="filter-sidebar__section">
+                    <p class="filter-sidebar__section-title">Buscar</p>
+                    <div class="filter-sidebar__search">
+                        <span class="filter-sidebar__search-icon" aria-hidden="true">🔍</span>
+                        <input type="search" id="filter-search-mobile" placeholder="Título o instructor…" aria-label="Buscar cursos">
+                    </div>
+                </div>
+
+                {{-- Category --}}
+                <div class="filter-sidebar__section">
+                    <p class="filter-sidebar__section-title">Categoría</p>
+                    @foreach($categories as $cat)
+                        <button
+                            class="filter-sidebar__radio-item {{ $cat['id'] === 'todos' ? 'is-active' : '' }}"
+                            data-category-mobile="{{ $cat['id'] }}"
+                        >
+                            <span>{{ $cat['label'] }}</span>
+                        </button>
+                    @endforeach
+                </div>
+
+                {{-- Modality --}}
+                <div class="filter-sidebar__section">
+                    <p class="filter-sidebar__section-title">Modalidad</p>
+                    @foreach([['En Vivo','🔴'],['Online','💻'],['Presencial','📍']] as [$mod, $icon])
+                        <label class="filter-sidebar__check-item">
+                            <input type="checkbox" value="{{ $mod }}" class="modality-check-mobile">
+                            <span class="filter-sidebar__check-label">
+                                <span aria-hidden="true">{{ $icon }}</span>
+                                {{ $mod }}
+                            </span>
+                        </label>
+                    @endforeach
+                </div>
+
+                <button class="filter-drawer__apply" id="filter-drawer-apply">
+                    Ver <span id="drawer-result-count">{{ count($courses) }}</span> cursos
+                </button>
+            </div>
+        </div>
 </section>
 
 {{-- Pass courses data to JS --}}
