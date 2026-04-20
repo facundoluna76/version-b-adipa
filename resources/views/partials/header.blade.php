@@ -76,7 +76,7 @@
                     >
                         {{ $item['label'] }}
                         @if(isset($item['badge']))
-                            <span class="nav__badge {{ isset($item['badgeColor']) && $item['badgeColor'] === 'green' ? 'nav__badge--green' : '' }}">
+                            <span class="nav__badge {{ isset($item['badgeColor']) && $item['badgeColor'] === 'cyan' ? 'nav__badge--cyan' : '' }}">
                                 {{ $item['badge'] }}
                             </span>
                         @endif

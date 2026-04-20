@@ -254,7 +254,7 @@ class CoursesData
     {
         return [
             ['label' => 'Recursos',            'href' => '#'],
-            ['label' => 'Seminarios',          'href' => '#', 'badge' => 'GRATIS', 'badgeColor' => 'green'],
+            ['label' => 'Seminarios',          'href' => '#', 'badge' => 'GRATIS', 'badgeColor' => 'cyan'],
             ['label' => 'Congreso',            'href' => '#', 'badge' => 'NUEVO'],
             ['label' => 'Especializaciones',   'href' => '#'],
             ['label' => 'Acreditaciones',      'href' => '#'],
