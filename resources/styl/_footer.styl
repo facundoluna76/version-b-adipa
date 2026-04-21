@@ -259,7 +259,7 @@
 
 // ─── Testimonials ─────────────────────────────────────────────────────
 .testimonials
-  background $gray-50
+  background #f3f4ff
   padding 5rem 0
 
   .dark &
@@ -280,15 +280,48 @@
     .dark &
       color $white
 
-  &__grid
+  &__carousel
+    position relative
+    display flex
+    align-items center
+    gap 1rem
+
+  &__arrow
+    flex-shrink 0
+    width 2.5rem
+    height 2.5rem
+    border-radius $radius-full
+    border 1px solid $gray-200
+    background $white
+    color $purple
+    display flex
+    align-items center
+    justify-content center
+    cursor pointer
+    transition $transition
+    box-shadow $shadow-sm
+
+    .dark &
+      border-color rgba($gray-700, 1)
+      background $gray-900
+      color $white
+
+    &:hover
+      background $purple
+      border-color $purple
+      color $white
+
+    svg
+      display block
+
+  &__viewport
+    flex 1
+    overflow hidden
     display grid
     grid-template-columns 1fr
-    gap 1.5rem
+    gap 1rem
 
     @media (min-width: $bp-sm)
-      grid-template-columns repeat(2, 1fr)
-
-    @media (min-width: $bp-lg)
       grid-template-columns repeat(3, 1fr)
 
   &__card
@@ -296,22 +329,32 @@
     background $white
     padding 1.5rem
     box-shadow $shadow-sm
+    transition opacity .3s ease, transform .3s ease
 
     .dark &
       background $gray-900
+
+    &.is-leaving-next
+      opacity 0
+      transform translateX(1rem)
+
+    &.is-leaving-prev
+      opacity 0
+      transform translateX(-1rem)
+
 
   &__stars
     display flex
     gap .25rem
     margin-bottom 1rem
-    font-size 1rem
+    font-size 1.125rem
     color $orange
 
   &__quote
-    font-size .875rem
+    font-size .9375rem
     line-height 1.7
     color $gray-700
-    margin-bottom 1.25rem
+    margin-bottom 1.5rem
 
     .dark &
       color $white
@@ -322,8 +365,8 @@
     gap .75rem
 
   &__avatar
-    width 2.5rem
-    height 2.5rem
+    width 3rem
+    height 3rem
     border-radius $radius-full
     background $purple
     color $white
@@ -349,3 +392,29 @@
 
     .dark &
       color $white
+
+  &__dots
+    display flex
+    justify-content center
+    gap .5rem
+    margin-top 1.5rem
+
+  &__dot
+    height .5rem
+    border-radius $radius-full
+    background $gray-200
+    border none
+    cursor pointer
+    transition all .3s ease
+    width .5rem
+    padding 0
+
+    .dark &
+      background rgba($gray-700, 1)
+
+    &.is-active
+      width 1.5rem
+      background $purple
+
+    &:hover:not(.is-active)
+      background rgba($purple, .4)
