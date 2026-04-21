@@ -81,7 +81,7 @@
 
   &__search-input
     width 100%
-    border-radius $radius-full
+    border-radius 7px
     border 1px solid $gray-200
     background $gray-50
     padding .5rem 3rem .5rem 1rem
@@ -114,7 +114,7 @@
     padding 0 1rem
     background $cyan
     border none
-    border-radius 0 $radius-full $radius-full 0
+    border-radius 0 7px 7px 0
     color $white
     cursor pointer
     transition background-color .2s ease
@@ -202,12 +202,11 @@
     background $purple
     color $white
     border none
-    border-radius $radius-full
     cursor pointer
 
     &:hover
-      background $purple-600
-      box-shadow $shadow-purple
+      background $cyan
+      box-shadow 0 4px 16px rgba($cyan, .35)
 
   &__mobile-toggle
     btn-base()
@@ -288,7 +287,7 @@
       color $purple
 
   &__badge
-    border-radius 4px
+    border-radius 7px
     padding .125rem .375rem
     font-size .625rem
     font-weight 700
@@ -342,7 +341,7 @@
 
   &__search-input
     width 100%
-    border-radius $radius-full
+    border-radius 7px
     border 1px solid $gray-200
     background $gray-50
     padding .625rem 1rem
@@ -400,7 +399,6 @@
     padding .625rem 1rem
     border 1px solid $purple
     color $purple
-    border-radius $radius-full
     cursor pointer
     margin-bottom .5rem
 
@@ -414,8 +412,7 @@
     padding .625rem 1rem
     background $purple
     color $white
-    border-radius $radius-full
     cursor pointer
 
     &:hover
-      background $purple-600
+      background $cyan

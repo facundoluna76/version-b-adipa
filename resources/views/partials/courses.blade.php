@@ -57,7 +57,6 @@
                             <label class="filter-sidebar__check-item">
                                 <input type="checkbox" value="{{ $mod }}" class="modality-check">
                                 <span class="filter-sidebar__check-label">
-                                    <span aria-hidden="true">{{ $icon }}</span>
                                     {{ $mod }}
                                 </span>
                                 <span class="filter-sidebar__check-count" data-modality-count="{{ $mod }}">0</span>

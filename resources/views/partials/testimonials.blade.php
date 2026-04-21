@@ -3,7 +3,7 @@
 
         <div class="testimonials__header fade-in">
             <h2 id="testimonials-heading" class="testimonials__heading">
-                Lo que dicen nuestros estudiantes
+                Lo que dicen nuestros <span class="gradient-text">estudiantes</span>
             </h2>
         </div>
 
